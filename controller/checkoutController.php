@@ -39,7 +39,7 @@ class checkoutController
 
     public function setPix($amount)
     {
-        $px[00]="01"; //Payload Format Indicator, Obrigatório, valor fixo: 01
+        $px[00]="01"; // Format Indicator, Obrigatório, valor fixo: 01
         // Se o QR Code for para pagamento único (só puder ser utilizado uma vez), descomente a linha a seguir.
         //$px[01]="12"; //Se o valor 12 estiver presente, significa que o BR Code só pode ser utilizado uma vez. 
         $px[26][00]="BR.GOV.BCB.PIX"; //Indica arranjo específico; “00” (GUI) obrigatório e valor fixo: br.gov.bcb.pix
