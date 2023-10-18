@@ -17,6 +17,12 @@ class checkoutController
 
     public function index()
     {
+        if(!isset($_SESSION["id"]))
+        {
+            header("Location: /byteWorks/signup?response=NaoLogado");
+            return;
+        }
+
         $amount = $_SESSION["carShoppingValue"];
 
         $pix = $this->setPix($amount);
@@ -25,6 +31,7 @@ class checkoutController
         QRcode::png($pix, "QR_code.png");
 
         $_SESSION["carShopping"] = array();
+        $_SESSION["carShoppingValue"] = 0;
 
         include __DIR__.'/../view/checkout.php';
         return;
@@ -74,6 +81,7 @@ class checkoutController
         if(count($select) > 1)
         {
             header("Location: /byteWorks?response=ProdutoJaEmProcesso");
+            $_SESSION["carShoppingValue"] = 0;
             return;
         }
         $insert = $this->model->insert($arrayContent);

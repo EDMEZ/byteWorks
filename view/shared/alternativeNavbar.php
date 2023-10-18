@@ -41,7 +41,7 @@
                 <li class="nav-item btn-group">
                     <?php
 
-                    if (isset($_SESSION) and !empty($_SESSION))
+                    if (isset($_SESSION['id']) and !empty($_SESSION['id']))
                     {
                         echo
                             "

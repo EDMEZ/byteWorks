@@ -7,7 +7,7 @@ require 'shared/shared.php';
 require 'shared/load.php';
 
 ?>
-<div class="container-fluid">
+<div class="container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -31,20 +31,20 @@ require 'shared/load.php';
 <div class="container">
     <div class="row justify-content-center">
         <button class="col-sm-4 btn btn-light justify-content-center">
-            <h5>Para profissionais</h5>
-            <label>Notebooks por área de atuação</label>
+            <h5>Produtos selecionados</h5>
+            <label>Na byteWorks você tem uma variedade de categorias para a sua escolha</label>
         </button>
 
         <button class="col-sm-4 btn btn-light justify-content-center">
             <form action="/byteWorks/" method="post">
-                <h5>Todos os modelos</h5>
-                <label>Notebooks por área de atuação</label>
+                <h5>Qualidade e cuidados</h5>
+                <label>Os laptops são cuidadosamente armazenados para o maior zelo com o produto</label>
             </form>
         </button>
 
         <button class="col-sm-4 btn btn-light justify-content-center">
-            <h5>Para sua diversão</h5>
-            <label>Notebooks por área de atuação</label>
+            <h5>Variedade</h5>
+            <label>De laptops de lazer para o profissional e até mesmo para gravar conteudos de streamer</label>
         </button>
     </div>
 </div>
@@ -53,11 +53,17 @@ require 'shared/load.php';
 <div class="container bg-light">
     <div class="row justify-content-center">
         <div class="col">
-            <!-- <img src="https://eshop-api.avell.com.br/storage/5/content/6277f7f3690f65331/64401e074579d.png" width="500"> -->
+            <img src="https://images.vexels.com/media/users/3/261453/isolated/lists/7fac200b731438c7a078ddedd69c7181-halloween-jack-o-39-lantern-e-desenho-de-gato-preto.png" width="200">
         </div>
 
         <div class="col">
-            <h5>Outlet Avell: Alto desempenho com preços imperdíveis. </h5>
+            <br>
+            <h5>Promoção de halloween da ByteWorks!!! </h5>
+            <p>Produtos que contêm as cores preto e laranja em conjunto irão ganhar desconto de 15% em comemoração ao halloween!!!!</p>
+            
+            <form action="/byteWorks/consultancy/halloween/id=5" method="post">
+                <button class="btn btn-primary">Ver categoria de halloween</button>
+            </form>
         </div>
     </div>
 </div>
@@ -75,7 +81,7 @@ require 'shared/load.php';
                     <img class="card-img-top" src="<?= $data['imagePath'] ?>" style="max-height: 200px;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $data['title'] ?></h5>
-                        <p class="card-text"><?= $data['description'] ?></p>
+                        <p class="card-text">R$ <?= number_format($data['amount'], 2, ',', '.');  ?></p>
                         <?php if ($data['stock'] == 1): ?>
                             <form method="post" action="/byteWorks/product/<?= str_replace(" ", "-", $data['title']) ?>">
                                 <input type="hidden" name="productId" value="<?= $data['idProduct'] ?>">
@@ -97,12 +103,13 @@ require 'shared/load.php';
 
 <footer class="bg-light text-center mt-5">
     <div class="container">
+        <br>
         <div class="row">
             <div class="col-md-4">
                 <h5>Links Úteis</h5>
                 <ul class="list-unstyled">
                     <li><a href="/byteWorks">Home</a></li>
-                    <li><a href="/byteWorks/consultancy">Consultoria</a></li>
+                    <li><a href="/byteWorks/consultancy">Categorias</a></li>
                     <li><a href="/byteWorks/support">Suporte</a></li>
                 </ul>
             </div>

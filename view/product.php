@@ -24,7 +24,7 @@ require 'shared/load.php';
                             <input type="hidden" name="title" value="<?php echo $productData[0]['title'] ?>">
                             <input type="hidden" name="amount" value="<?php echo $productData[0]['amount'] ?>">
                             <input type="hidden" name="id" value="<?php echo $productData[0]['idProduct'] ?>">
-                            <button style="width: 100%" class="btn btn-primary mt-2"><i class="fa-solid fa-bag-shopping"></i> Adicionar à sacola</button>
+                            <button style="width: 100%" class="btn btn-primary mt-2"><i class="fa-solid fa-bag-shopping"></i> Adicionar ao carrinho</button>
                         </form>
                     </div>
                 </div>
@@ -34,12 +34,13 @@ require 'shared/load.php';
 
     <footer class="bg-light text-center mt-5">
         <div class="container">
+            <br>
             <div class="row">
                 <div class="col-md-4">
                     <h5>Links Úteis</h5>
                     <ul class="list-unstyled">
                         <li><a href="/byteWorks">Home</a></li>
-                        <li><a href="/byteWorks/consultancy">Consultoria</a></li>
+                        <li><a href="/byteWorks/consultancy">Categorias</a></li>
                         <li><a href="/byteWorks/support">Suporte</a></li>
                     </ul>
                 </div>

@@ -234,12 +234,13 @@ else if(isset($_GET["query"]) and $_GET["query"] === "userexist")
 
 <footer class="bg-light text-center mt-5">
     <div class="container">
+        <br>
         <div class="row">
             <div class="col-md-4">
                 <h5>Links Úteis</h5>
                 <ul class="list-unstyled">
                     <li><a href="/byteWorks">Home</a></li>
-                    <li><a href="/byteWorks/consultancy">Consultoria</a></li>
+                    <li><a href="/byteWorks/consultancy">Categorias</a></li>
                     <li><a href="/byteWorks/support">Suporte</a></li>
                 </ul>
             </div>

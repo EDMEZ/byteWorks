@@ -67,7 +67,7 @@
                 <li class="nav-item btn-group">
                     <?php
 
-                    if (isset($_SESSION) and !empty($_SESSION)) {
+                    if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                         echo
                             "
                             <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold;' href='#' id='navbarContentUser' data-toggle='dropdown'
@@ -143,7 +143,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/byteWorks/consultancy">
-                        Consultoria
+                        Categorias
                     </a>
                 </li>
                 <li class="nav-item">
@@ -202,7 +202,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/byteWorks/consultancy">
-                    Consultoria
+                    Categorias
                 </a>
             </li>
             <li class="nav-item">
@@ -323,6 +323,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <h5>Total: <?php echo number_format($_SESSION["carShoppingValue"], 2, ',', '.')?></h5>
                     <?php
                     if (isset($_SESSION["carShopping"]) and $_SESSION["carShopping"] != null) {
 
