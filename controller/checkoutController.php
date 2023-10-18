@@ -3,8 +3,8 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
-include "./lib/pix/php_qrcode_pix/phpqrcode/qrlib.php"; 
-include "./lib/pix/php_qrcode_pix/funcoes_pix.php";
+include __DIR__."/../lib/pix/php_qrcode_pix/phpqrcode/qrlib.php"; 
+include __DIR__."/../lib/pix/php_qrcode_pix/funcoes_pix.php";
 include __DIR__.'/../model/ordersModel.php';
 
 class checkoutController
