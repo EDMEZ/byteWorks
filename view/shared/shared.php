@@ -78,6 +78,9 @@
                             <div class='dropdown-menu justify-content-center' aria-labelledby='navbarContentUser'
                                 style='z-index: 999'>
                                 <div class='container'>
+                                    <ul class='navbar-nav'>
+                                        <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile?id=".$_SESSION["id"]."'>Meus dados</a></li>
+                                    </ul>
                                     <form action='/byteWorks/logout' method='post'>
                                             <button class='btn btn-danger'>sair</button>
                                     </form>
@@ -215,6 +218,11 @@
                     Suporte
                 </a>
             </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="/byteWorks/freelancer">
+                        freelancer
+                    </a>
+                </li>
             <li class="nav-item">
                 <button style="background-color: transparent; border: none; " type="button" data-toggle="modal"
                     data-target="#myModal">
