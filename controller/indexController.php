@@ -41,6 +41,12 @@ class indexController
 
         $dataSelect = $userModel->select($arrayColumns);
 
+        if(count($dataSelect) == 0)
+        {
+            header("Location: /byteWorks?response=usuarioNaoEncontrado");
+            return;
+        }
+
         $this->sessionStart($dataSelect);   
     }
 

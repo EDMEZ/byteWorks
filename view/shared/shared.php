@@ -151,6 +151,11 @@
                         Suporte
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/byteWorks/freelancer">
+                        freelancer
+                    </a>
+                </li>
             </ul>
         </div>
 

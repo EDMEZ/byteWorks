@@ -6,6 +6,7 @@
     include __DIR__.'/controller/productController.php';
     include __DIR__.'/controller/consultancyController.php';
     include __DIR__.'/controller/checkoutController.php';
+    include __DIR__.'/controller/freelancerController.php';
 
     $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
@@ -16,6 +17,7 @@
     $productController     = new productController() ;
     $consultancyController = new consultancyController() ;
     $checkoutController = new checkoutController() ;
+    $freelancerController = new freelancerController() ;
 
     switch($url)
     {
@@ -51,6 +53,12 @@
         break;
         case "/byteWorks/product/unset": 
             echo $productController->unsetProduct();
+        break;
+        case "/byteWorks/freelancer": 
+            echo $freelancerController->index();
+        break;
+        case "/byteWorks/freelancer/create": 
+            echo $freelancerController->create();
         break;
         case "/byteWorks/checkout": 
             $currentUrl  = $url;

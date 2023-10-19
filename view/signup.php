@@ -268,3 +268,12 @@ else if(isset($_GET["query"]) and $_GET["query"] === "userexist")
         </div>
     </div>
 </footer>
+
+<script>
+
+    $(document).ready(() =>
+    {
+        $("#InsertCpf").mask('000.000.000-00');
+        $("#InsertPhone").mask('(00) 00000-0000');
+    });
+</script>
