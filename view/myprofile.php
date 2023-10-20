@@ -94,7 +94,7 @@ require 'shared/load.php';
                 echo
                     "
                         <tr>
-                            <td style='text-align: center;'>" . $data['imagePath'] . "</td>
+                            <td style='text-align: center;'><img src='" . $data['imagePath'] . "'></td>
                             <td style='text-align: center;'>" . $data['title'] . "</td>
                             <td style='text-align: center;'>" . number_format($data['amount'], 2, ',', '.') . "</td>
                             <td style='text-align: center;'>" . $data['description'] . "</td>
