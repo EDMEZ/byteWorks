@@ -246,7 +246,7 @@
             <li class="nav-item">
                 <?php
 
-                if (isset($_SESSION) and !empty($_SESSION)) {
+                if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                     echo
                         "
                         <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold;' href='#' id='navbarContentUser' data-toggle='dropdown'
