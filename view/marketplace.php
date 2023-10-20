@@ -12,11 +12,11 @@ require 'shared/load.php';
 <?php foreach ($productData as $data): ?>
             <div class="col-12 col-md-4 mb-3">
                 <div class="card">
-                    <img class="card-img-top img-thumbnail" src="<?= $data['imagePath'] ?>" style="max-height: 200px;">
+                    <img class="card-img-top img-thumbnail" src="<?= $data['imagePath'] ?>" style="max-height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $data['title'] ?></h5>
                         <p class="card-text">R$ <?= number_format($data['amount'], 2, ',', '.');  ?></p>
-                            <form method="post" action="/byteWorks/product/<?= str_replace(" ", "-", $data['title']) ?>">
+                            <form method="post" action="/byteWorks/marketplace/<?= str_replace(" ", "-", $data['title']) ?>">
                                 <input type="hidden" name="productId" value="<?= $data['idmarketplace'] ?>">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa-solid fa-glasses"></i> Ver detalhes

@@ -105,6 +105,9 @@
         }else if (preg_match('/^\/byteWorks\/consultancy\/(.+)/', $url, $matches)) {
             $currentUrl  = $url;
             $url        != $currentUrl ? $controller->index() : $consultancyController->returnPageWithFilter();
+        } else if (preg_match('/^\/byteWorks\/marketplace\/(.+)/', $url, $matches)) {
+            $currentUrl  = $url;
+            $url        != $currentUrl ? $controller->index() : $marketplaceController->indexProduct();
         } else {
             $notfoundController->index();
         }
