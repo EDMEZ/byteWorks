@@ -20,7 +20,7 @@ require 'shared/load.php';
                     <p><?php echo $productData[0]['description'] ?></p>
                     <div class="mt-5">
                         <form action="/byteWorks/product/shopping" method="post">
-                            <input type="hidden" name="imagePath" value="<?php echo $productData[0]['imagePath'] ?>">
+                            <input type="hidden" name="imagePath" value="/<?php echo $productData[0]['imagePath'] ?>">
                             <input type="hidden" name="title" value="<?php echo $productData[0]['title'] ?>">
                             <input type="hidden" name="amount" value="<?php echo $productData[0]['amount'] ?>">
                         </form>
