@@ -62,6 +62,32 @@ class userModel extends Database
         }
     }
 
+    public function selectProduct($where)
+    {
+        $stringWhere = " WHERE ";
+        try {
+            if(count($where) === 0)
+            {
+                $stringWhere = "";
+            }   
+
+            foreach($where as $column => $value)
+            {
+                $stringWhere .= " " . $column . " = '". $value . "' AND";
+            }
+
+            $stringWhere = rtrim($stringWhere, " AND");
+
+            $sqlSelect = "SELECT * FROM orders inner join statusorders on statusorders.idStatus = orders.idStatus ". $stringWhere;
+            $query = $this->conn->query($sqlSelect);
+            $fetch = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            return $fetch;
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
+
     public function update($where = "null", $id = "null ")
     {
         $stringWhere = " set ";

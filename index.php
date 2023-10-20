@@ -43,6 +43,9 @@
         case "/byteWorks/logout": 
             $controller->logout();
         break;
+        case "/byteWorks/myprofile/products": 
+            $myprofileController->indexProducts();
+        break;
         case "/byteWorks/signin/select": 
             $controller->select();
         break;

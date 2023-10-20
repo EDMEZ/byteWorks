@@ -30,6 +30,19 @@ class myprofileController
         include __DIR__.'/../view/myprofile.php';
         return;
     }
+    public function indexProducts()
+    {
+        if(!isset($_GET["id"]))
+        {
+            header("Location: /byteWorks?ok=error");
+            return;
+        }
+
+        $data = $this->returnDataUserProducts($_GET["id"]);
+
+        include __DIR__.'/../view/myproducts.php';
+        return;
+    }
 
     public function returnDataUser($id)
     {
@@ -42,6 +55,16 @@ class myprofileController
         return $dataSelect;
     }
 
+    public function returnDataUserProducts($id)
+    {
+        $arrayColumns = array(
+            "idUser" => $id
+        );
+
+        $dataSelect = $this->model->selectProduct($arrayColumns);
+
+        return $dataSelect;
+    }
     public function returnDataProductMarketplace($id)
     {
         $arrayColumns = array(

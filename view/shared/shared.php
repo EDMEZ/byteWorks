@@ -80,6 +80,7 @@
                                 <div class='container'>
                                     <ul class='navbar-nav'>
                                         <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile?id=".$_SESSION["id"]."'>Meus dados</a></li>
+                                        <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile/products?id=".$_SESSION["id"]."'>Minhas compras</a></li>
                                     </ul>
                                     <form action='/byteWorks/logout' method='post'>
                                             <button class='btn btn-danger'>sair</button>
