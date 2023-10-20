@@ -15,10 +15,12 @@ class userModel extends Database
             $sqlInsert = "INSERT INTO " . $this->table . " (name, nickname, email, password, cpf, rg, birthDate, FKstate, fkcity, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $query = $this->conn->prepare($sqlInsert);
 
+            $password = md5($data["InsertPassword"]);
+            
             $query->bindParam(1, $data["InsertName"]);
             $query->bindParam(2, $data["InsertNickname"]);
             $query->bindParam(3, $data["InsertEmail"]);
-            $query->bindParam(4, md5($data["InsertPassword"]));
+            $query->bindParam(4, $password);
             $query->bindParam(5, $data["InsertCpf"]);
             $query->bindParam(6, $data["InsertCpf"]); 
             $query->bindParam(7, $data["InsertBirthdate"]);

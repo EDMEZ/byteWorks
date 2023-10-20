@@ -122,7 +122,7 @@ require 'shared/load.php';
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/byteWorks/myprofile/marketplace" method="post">
+                <form action="/byteWorks/myprofile/marketplace" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg">
                             <label for="">Imagem <span style="color: red">*</span></label>

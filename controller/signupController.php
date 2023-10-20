@@ -28,7 +28,7 @@ class signupController
            (!isset($_GET["InsertEmail"])     or empty($_GET["InsertEmail"]))     or
            (!isset($_GET["InsertPassword"])  or empty($_GET["InsertPassword"])))
            {
-                header("Location: /byteWorks/signup?ok=error");
+                header("Location: /byteWorks/signup?ok=camposVazios");
                 return;
            }
 

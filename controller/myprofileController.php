@@ -57,7 +57,8 @@ class myprofileController
 
     public function marketplace()
     {
-        if((!isset($_POST["titulomarketplace"])     or empty($_POST["titulomarketplace"])) or
+        if((!isset($_FILES['imagemarketplace'])     or empty($_FILES['imagemarketplace'])) or
+            (!isset($_POST["titulomarketplace"])     or empty($_POST["titulomarketplace"])) or
             (!isset($_POST["precomarketplace"])     or empty($_POST["precomarketplace"]))  or
             (!isset($_POST["descricaomarketplace"]) or empty($_POST["descricaomarketplace"])))
         {
@@ -66,12 +67,15 @@ class myprofileController
         }
 
         $model = new marketplaceModel();
+        $file = $_FILES['imagemarketplace'];
+
+        move_uploaded_file($file['tmp_name'], 'assets/productImages/'.$file['name']);
 
         $contentData = array(
             "titulomarketplace"    => $_POST["titulomarketplace"],
             "precomarketplace"     => $_POST["precomarketplace"],
             "descricaomarketplace" => $_POST["descricaomarketplace"],
-            "imagePath"            => $_POST["imagePath"],
+            "imagePath"            => 'assets/productImages/'.$file['name'],
             "user"                 => $_SESSION["id"]
         );
 
