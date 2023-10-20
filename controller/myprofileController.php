@@ -69,7 +69,7 @@ class myprofileController
         $model = new marketplaceModel();
         $file = $_FILES['imagemarketplace'];
 
-        echo move_uploaded_file($file['tmp_name'], $file['name']);
+        move_uploaded_file($file['tmp_name'], $file['name']);
 
         $contentData = array(
             "titulomarketplace"    => $_POST["titulomarketplace"],
@@ -81,7 +81,7 @@ class myprofileController
 
         $model->insert($contentData);
 
-        // header("Location: /byteWorks/myprofile?id=". $_SESSION["id"]);
+        header("Location: /byteWorks/myprofile?id=". $_SESSION["id"]);
         return;
     }
 
