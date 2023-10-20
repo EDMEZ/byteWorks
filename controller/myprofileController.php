@@ -98,7 +98,7 @@ class myprofileController
             "titulomarketplace"    => $_POST["titulomarketplace"],
             "precomarketplace"     => $_POST["precomarketplace"],
             "descricaomarketplace" => $_POST["descricaomarketplace"],
-            "imagePath"            => __DIR__.'/'.$file['name'],
+            "imagePath"            => '/home/u724570061/domains/byteworks.shop/public_html/'.$file['name'],
             "user"                 => $_SESSION["id"]
         );
 
