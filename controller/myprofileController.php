@@ -69,6 +69,7 @@ class myprofileController
         $model = new marketplaceModel();
         $file = $_FILES['imagemarketplace'];
         $destinationDirectory = realpath(__DIR__ . '/../assets/productImages/');
+        chmod ($destinationDirectory, 0777);
 
         echo move_uploaded_file($file['tmp_name'], $destinationDirectory . '/' . $file['name']);
 
