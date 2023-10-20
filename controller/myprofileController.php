@@ -3,6 +3,8 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
+define ('SITE_ROOT', realpath(dirname(__FILE__)));
+
 include __DIR__.'/../model/marketplaceModel.php';
 class myprofileController
 {
@@ -69,7 +71,7 @@ class myprofileController
         $model = new marketplaceModel();
         $file = $_FILES['imagemarketplace'];
 
-        echo move_uploaded_file($file['tmp_name'], __DIR__.'/../assets/productImages/'.$file['name']);
+        echo move_uploaded_file($file['tmp_name'], SITE_ROOT.'/../assets/productImages/'.$file['name']);
 
         $contentData = array(
             "titulomarketplace"    => $_POST["titulomarketplace"],
