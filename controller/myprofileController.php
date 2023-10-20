@@ -69,7 +69,7 @@ class myprofileController
         $model = new marketplaceModel();
         $file = $_FILES['imagemarketplace'];
 
-        echo move_uploaded_file($file['tmp_name'], 'assets/productImages/'.$file['name']);
+        echo move_uploaded_file($file['tmp_name'], __DIR__.'/../assets/productImages/'.$file['name']);
 
         $contentData = array(
             "titulomarketplace"    => $_POST["titulomarketplace"],
