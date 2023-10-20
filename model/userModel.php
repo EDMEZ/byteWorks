@@ -59,5 +59,33 @@ class userModel extends Database
             return $e->getMessage();
         }
     }
+
+    public function update($where = "null", $id = "null ")
+    {
+        $stringWhere = " set ";
+        try {
+            if($where == "null")
+            {
+                $stringWhere = "";
+            }   
+            else
+            {
+                foreach($where as $column => $value)
+                {
+                    $stringWhere .= " " . $column . " = '". $value . "' ,";
+                }
+            }
+
+            $stringWhere = rtrim($stringWhere, " ,");
+ 
+            $sqlSelect = "UPDATE  " . $this->table . " ". $stringWhere . " WHERE idUser ='".$id."'";
+            $query = $this->conn->query($sqlSelect);
+            $fetch = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            return $sqlSelect;
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
 }
 ?>

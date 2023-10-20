@@ -62,9 +62,20 @@
         case "/byteWorks/freelancer/create": 
             echo $freelancerController->create();
         break;
+        case "/byteWorks/myprofile/marketplace": 
+            echo $myprofileController->marketplace();
+        break;
         case "/byteWorks/myprofile": 
             $currentUrl  = $url;
             $url        != $currentUrl ? $controller->index() : $myprofileController->index();
+        break;
+        case "/byteWorks/myprofile/update": 
+            $currentUrl  = $url;
+            $url        != $currentUrl ? $controller->index() : $myprofileController->update();
+        break;
+        case "/byteWorks/myprofile/marketplace/delete": 
+            $currentUrl  = $url;
+            $url        != $currentUrl ? $controller->index() : $myprofileController->delete();
         break;
         case "/byteWorks/checkout": 
             $currentUrl  = $url;
