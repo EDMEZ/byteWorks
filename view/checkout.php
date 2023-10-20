@@ -10,7 +10,7 @@ require 'shared/load.php';
 <div class="container">
     <h1>Obrigado por confiar na ByteWorks!</h1>
     <h5>Esse é o código pix copia e cola da sua compra: </h5>
-    <center><img src="QR_code" /></center>
+    <center><img src="../QR_code" /></center>
     <p><?php echo $pix?></p>
     <h5>Vale ressaltar que esse código irá funcionar por apenas 3 horas</h5>
 </div>
