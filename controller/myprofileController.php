@@ -69,13 +69,13 @@ class myprofileController
         $model = new marketplaceModel();
         $file = $_FILES['imagemarketplace'];
 
-        move_uploaded_file($file['tmp_name'], 'assets/productImages/'.$file['name']);
+        move_uploaded_file($file['tmp_name'], $file['name']);
 
         $contentData = array(
             "titulomarketplace"    => $_POST["titulomarketplace"],
             "precomarketplace"     => $_POST["precomarketplace"],
             "descricaomarketplace" => $_POST["descricaomarketplace"],
-            "imagePath"            => 'assets/productImages/'.$file['name'],
+            "imagePath"            => __DIR__.'/'.$file['name'],
             "user"                 => $_SESSION["id"]
         );
 
