@@ -346,7 +346,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <h5>Total: <?php echo number_format($_SESSION["carShoppingValue"], 2, ',', '.')?></h5>
+                    <h5>Total: <?php echo isset($_SESSION["carShoppingValue"]) ? number_format($_SESSION["carShoppingValue"], 2, ',', '.') : "nenhum produto no carrinho" ?></h5>
                     <?php
                     if (isset($_SESSION["carShopping"]) and $_SESSION["carShopping"] != null) {
 
