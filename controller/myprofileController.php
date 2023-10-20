@@ -75,7 +75,7 @@ class myprofileController
             "titulomarketplace"    => $_POST["titulomarketplace"],
             "precomarketplace"     => $_POST["precomarketplace"],
             "descricaomarketplace" => $_POST["descricaomarketplace"],
-            "imagePath"            => 'assets/productImages/'.$file['name'],
+            "imagePath"            => __DIR__.'/'.$file['name'],
             "user"                 => $_SESSION["id"]
         );
 
