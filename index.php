@@ -8,6 +8,7 @@
     include __DIR__.'/controller/checkoutController.php';
     include __DIR__.'/controller/freelancerController.php';
     include __DIR__.'/controller/myprofileController.php';
+    include __DIR__.'/controller/marketplaceController.php';
 
     $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
@@ -20,6 +21,7 @@
     $checkoutController = new checkoutController() ;
     $freelancerController = new freelancerController() ;
     $myprofileController = new myprofileController() ;
+    $marketplaceController = new marketplaceController() ;
 
     switch($url)
     {
@@ -31,6 +33,9 @@
         break;
         case "/byteWorks/signup": 
             $signupController->index();
+        break;
+        case "/byteWorks/marketplace":  
+            $marketplaceController->index();
         break;
         case "/byteWorks/logout": 
             $controller->logout();

@@ -145,6 +145,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/byteWorks/marketplace">
+                        marketplace
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/byteWorks/consultancy">
                         Categorias
                     </a>
@@ -208,6 +213,11 @@
                     Home
                 </a>
             </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="/byteWorks/marketplace">
+                        marketplace
+                    </a>
+                </li>
             <li class="nav-item">
                 <a class="nav-link" href="/byteWorks/consultancy">
                     Categorias
