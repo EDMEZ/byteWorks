@@ -105,7 +105,7 @@
         </div>
     </nav>
     <nav class="navbar navbar-expand-lg justify-content-center">
-        <a class="navbar-brand" href="/byteWorks">
+        <a class="navbar-brand" href="/byteWorks/">
             <h1 style="font-family: 'Anurati', sans-serif;'">ByteWorks</h1>
         </a>
     </nav>
