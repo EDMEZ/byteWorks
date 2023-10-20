@@ -25,6 +25,12 @@
 
     switch($url)
     {
+        case "/": 
+            $controller->index();
+        break;
+        case "": 
+            $controller->index();
+        break;
         case "/byteWorks": 
             $controller->index();
         break;
