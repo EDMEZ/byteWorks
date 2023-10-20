@@ -15,7 +15,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>ByteWorks - Construindo o futuro com você</title>
-    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
 </head>
 <style>
         @import url('https://fonts.cdnfonts.com/css/anurati');
