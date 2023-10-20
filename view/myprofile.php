@@ -141,7 +141,7 @@ require 'shared/load.php';
                     </div>
                     <div class="row">
                         <label for="">Descrição <span style="color: red">*</span></label>
-                        <textarea class="form-control" name="descricaomarketplace" id="descricaomarketplace"></textarea>    
+                        <textarea class="form-control" name="descricaomarketplace" id="descricaomarketplace" placeholder="ps: coloque uma rede social para que o interessado no produto possa entrar em contato"></textarea>    
                     </div>
             </div>
             <div class="modal-footer">
