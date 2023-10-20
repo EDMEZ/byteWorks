@@ -7,7 +7,7 @@ require 'shared/shared.php';
 require 'shared/load.php';
 
 ?>
-
+    <div class="row mt-5">
 <?php foreach ($productData as $data): ?>
             <div class="col-12 col-md-4 mb-3">
                 <div class="card">
@@ -25,6 +25,7 @@ require 'shared/load.php';
                 </div>
             </div>
         <?php endforeach; ?>
+    </div>
 
 <footer class="bg-light text-center mt-5">
     <div class="container">
