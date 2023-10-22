@@ -76,14 +76,14 @@
                         isset($_SESSION["id"]) and !empty($_SESSION["id"])
                     ) {
                         echo "
-                            <a class='nav-link dropdown-toggle' style='font-size: 10px; font-weight: bold;' href='#' id='navbarContentUser' data-toggle='dropdown'
+                            <a class='nav-link dropdown-toggle' style='font-size: 10px; font-weight: bold; color: white' href='#' id='navbarContentUser' data-toggle='dropdown'
                                 aria-haspopup='true' aria-expanded='false'>
                                 " .
                             $_SESSION["login"] .
                             "
                             </a>
 
-                            <div class='dropdown-menu justify-content-center' aria-labelledby='navbarContentUser'
+                            <div class='dropdown-menu justify-content-center' style='background-color: #33333' aria-labelledby='navbarContentUser'
                                 style='z-index: 999'>
                                 <div class='container'>
                                     <ul class='navbar-nav'>
