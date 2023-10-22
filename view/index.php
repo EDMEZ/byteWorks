@@ -7,7 +7,6 @@ require 'shared/shared.php';
 require 'shared/load.php';
 
 ?>
-<div class="container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -27,30 +26,27 @@ require 'shared/load.php';
             </div>
         </div>
     </div>
-</div>
-<div class="container">
+
+    <div class="container-fluid">
     <div class="row justify-content-center">
-        <button class="col-sm-4 btn btn-light justify-content-center">
-            <h5>Produtos selecionados</h5>
-            <label>Na byteWorks você tem uma variedade de categorias para a sua escolha</label>
+        <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
+            <p><i class="fa-brands fa-pix mt-2" ></i> <span>PAGAMENTO EM PIX</span></p>
         </button>
 
-        <button class="col-sm-4 btn btn-light justify-content-center">
-            <form action="/byteWorks/" method="post">
-                <h5>Qualidade e cuidados</h5>
-                <label>Os laptops são cuidadosamente armazenados para o maior zelo com o produto</label>
-            </form>
+        <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
+            <p><i class="fa-solid fa-truck-fast mt-2" ></i> <span>ENTREGA RÁPIDA</span></p>
         </button>
 
-        <button class="col-sm-4 btn btn-light justify-content-center">
-            <h5>Variedade</h5>
-            <label>De laptops de lazer para o profissional e até mesmo para gravar conteudos de streamer</label>
+        <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
+            <p><i class="fa-solid fa-lock mt-2" ></i> <span>COMPRA SEGURA E PROTEGIDA</span></p>
         </button>
     </div>
 </div>
 
+
+
 <br>
-<div class="container bg-light">
+<div class="container bg-white">
     <div class="row justify-content-center">
         <div class="col">
             <img src="https://images.vexels.com/media/users/3/261453/isolated/lists/7fac200b731438c7a078ddedd69c7181-halloween-jack-o-39-lantern-e-desenho-de-gato-preto.png" width="200">
@@ -70,70 +66,67 @@ require 'shared/load.php';
 
 
 <div class="container">
-    <div class="row mt-3 justify-content-center">
-        <h4>Veja mais de nossos produtos:</h4>
-    </div>
-
     <div class="row mt-5">
-        <?php foreach ($productData as $data): ?>
-            <div class="col-12 col-md-4 mb-3">
-                <div class="card">
-                    <img class="card-img-top img-thumbnail" src="<?= $data['imagePath'] ?>" style="max-height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $data['title'] ?></h5>
-                        <p class="card-text">R$ <?= number_format($data['amount'], 2, ',', '.');  ?></p>
-                        <?php if ($data['stock'] == 1): ?>
-                            <form method="post" action="/byteWorks/product/<?= str_replace(" ", "-", $data['title']) ?>">
-                                <input type="hidden" name="productId" value="<?= $data['idProduct'] ?>">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa-solid fa-glasses"></i> Ver detalhes
-                                </button>
-                            </form>
-                        <?php else: ?>
-                            <div class="alert alert-warning" role="alert">
-                                Sem estoque
-                            </div>
-                        <?php endif; ?>
+    <?php foreach ($productData as $data): ?>
+    <div class="col-12 col-md-4 mb-3">
+        <div class="card border-0">
+            <img class="card-img-top img-thumbnail" src="<?= $data['imagePath'] ?>" style="max-height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title" style="font-family: 'Gilroy-bold', sans-serif;"><?= $data['title'] ?></h5>
+                <p class="card-text" style="font-family: 'Gilroy-medium', sans-serif;">R$ <?= number_format($data['amount'], 2, ',', '.');  ?></p>
+                <?php if ($data['stock'] == 1): ?>
+                    <form method="post" action="/byteWorks/product/<?= str_replace(" ", "-", $data['title']) ?>">
+                        <input type="hidden" name="productId" value="<?= $data['idProduct'] ?>">
+                        <button type="submit" class="btn btn-secondary btn-block" style="font-family: 'Gilroy-bold', sans-serif;">
+                        <i class="fa-solid fa-eye"></i> Ver detalhes
+                        </button>
+                    </form>
+                <?php else: ?>
+                    <div class="alert alert-warning" role="alert">
+                        Sem estoque
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
-        <?php endforeach; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
+
     </div>
 </div>
 
-<footer class="bg-light text-center mt-5">
+<footer class="text-white mt-5" style="background-color: #222222">
     <div class="container">
         <br>
         <div class="row">
             <div class="col-md-4">
-                <h5>Links Úteis</h5>
+                <h5 style="font-family: 'Gilroy-Bold';">Links Úteis</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/byteWorks">Home</a></li>
-                    <li><a href="/byteWorks/consultancy">Categorias</a></li>
-                    <li><a href="/byteWorks/support">Suporte</a></li>
+                    <li><a style="color: white;" href="/byteWorks">Home</a></li>
+                    <li><a style="color: white;" href="/byteWorks/consultancy">Categorias</a></li>
+                    <li><a style="color: white;" href="/byteWorks/support">Suporte</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5>Contato</h5>
+                <h5 style="font-family: 'Gilroy-Bold';">Contato</h5>
                 <address>
                     <strong>ByteWorks</strong><br>
                     Santa Cruz, 546<br>
                     Belo Horizonte - MG, 30431-228<br>
                     <i class="bi bi-telephone"></i> Telefone: (31) 3213-8666<br>
-                    <i class="bi bi-envelope"></i> Email: <a href="mailto:info@empresa.com">suporte@byteWorks.com.br</a>
+                    <i class="bi bi-envelope"></i> Email: <a style="color: white;" href="mailto:suporte@byteWorks.com.br">suporte@byteWorks.com.br</a>
                 </address>
             </div>
             <div class="col-md-4">
-                <h5>Redes Sociais</h5>
+                <h5 style="font-family: 'Gilroy-Bold';">Redes Sociais</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
-                    <li><a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                    <li><a style="color: white;" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a style="color: white;" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a style="color: white;" href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 </ul>
             </div>
         </div>
         <div class="text-center mt-4">
-            <p>&copy; 2023 ByteWorks. Todos os direitos reservados.</p>
+            <p style="font-family: 'Gilroy-Bold';">&copy; 2023 ByteWorks. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>

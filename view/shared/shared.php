@@ -22,6 +22,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     @import url('https://fonts.cdnfonts.com/css/anurati');
     @import url('https://fonts.cdnfonts.com/css/munich');
+    @import url('https://fonts.cdnfonts.com/css/gilroy-bold');
 
     a {
         font-family: 'Poppins', sans-serif;
@@ -51,36 +52,47 @@
         background-color: transparent;
         border: none;
     }
+
+    a{
+        color: white;
+    }
+
+    a:hover{
+        color: #F04747;
+    }
 </style>
 
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-center fixed-top" style="height: 15px;">
+<body class="bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light justify-content-center fixed-top" style="height: 15px; background-color: #222222">
         <div class="collapse navbar-collapse justify-content-center" id="navbarText">
             <ul class="navbar-nav mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="font-size: 12px; font-weight: bold;"
+                    <a class="nav-link" style="font-size: 10px; font-weight: bold; color: white;"
                         href="/byteWorks/signup">Cadastre-se</a>
                 </li>
-                <li>
-                    <span class="nav-link" style="font-size: 12px; font-weight: bold;" href="#">*</span>
-                </li>
-                <li class="nav-item btn-group">
-                    <?php
 
-                    if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
-                        echo
-                            "
-                            <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold;' href='#' id='navbarContentUser' data-toggle='dropdown'
+                <li class="nav-item btn-group">
+                    <?php if (
+                        isset($_SESSION["id"]) and !empty($_SESSION["id"])
+                    ) {
+                        echo "
+                            <a class='nav-link dropdown-toggle' style='font-size: 10px; font-weight: bold;' href='#' id='navbarContentUser' data-toggle='dropdown'
                                 aria-haspopup='true' aria-expanded='false'>
-                                " . $_SESSION["login"] . "
+                                " .
+                            $_SESSION["login"] .
+                            "
                             </a>
 
                             <div class='dropdown-menu justify-content-center' aria-labelledby='navbarContentUser'
                                 style='z-index: 999'>
                                 <div class='container'>
                                     <ul class='navbar-nav'>
-                                        <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile?id=".$_SESSION["id"]."'>Meus dados</a></li>
-                                        <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile/products?id=".$_SESSION["id"]."'>Minhas compras</a></li>
+                                        <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile?id=" .
+                            $_SESSION["id"] .
+                            "'>Meus dados</a></li>
+                                        <li class='nav-item'><a class='nav-link' href='/byteWorks/myprofile/products?id=" .
+                            $_SESSION["id"] .
+                            "'>Minhas compras</a></li>
                                     </ul>
                                     <form action='/byteWorks/logout' method='post'>
                                             <button class='btn btn-danger'>sair</button>
@@ -88,93 +100,93 @@
                                 </div>
                             </div>
                             ";
-                    }
-                    else {
-                        echo
-                            "
-                            <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold;' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown'
+                    } else {
+                        echo "
+                            <a class='nav-link dropdown-toggle' style='font-size: 10px; font-weight: bold; color: white;' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown'
                                 aria-haspopup='true' aria-expanded='false'>
                                 Entrar
                             </a>
                             ";
-                    }
-                    ?>
+                    } ?>
 
-                    <div class="dropdown-menu justify-content-center sticky-top"
-                        aria-labelledby="navbarDropdownMenuLink" style="z-index: 99">
-                        <form action="/byteWorks/signin/select" method="get">
-                            <div class="container">
-                                <h1 class="h1">Entre na byteWorks!</h1>
-                                <div class="row">
-                                    <div class="col-lg">
-                                        <label for="">Login</label>
-                                        <input type="text" class="form-control" name="selectEmail">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg">
-                                        <label for="">Senha</label>
-                                        <input type="password" class="form-control" name="selectPassword">
-                                        <small><a href="">Esqueci a senha</a></small>
-                                    </div>
-                                </div>
-                        </form>
-
-                        <br>
-                        <div class="row">
-                            <div class="col-lg">
-                                <button class="btn btn-secondary">Entrar</button>
-                            </div>
-                        </div>
+<div class="dropdown-menu justify-content-center sticky-top"
+    aria-labelledby="navbarDropdownMenuLink" style="z-index: 99; background-color: #333333; padding: 20px;">
+    <form action="/byteWorks/signin/select" method="get">
+        <div class="container">
+            <h1 class="h1" style="font-family: 'Gilroy-bold'; color: white;">Entre na ByteWorks!</h1>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label for="selectEmail" style="color: white;">Login</label>
+                        <input type="text" class="form-control" id="selectEmail" name="selectEmail">
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label for="selectPassword" style="color: white;">Senha</label>
+                        <input type="password" class="form-control" id="selectPassword" name="selectPassword">
+                        <small><a href="#" style="color: white;">Esqueci a senha</a></small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <button class="btn btn-secondary btn-block">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
         </div>
         </li>
         </ul>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
-        <a class="navbar-brand" href="/byteWorks/" style="font-family: 'Anurati', sans-serif;'">
-            B<span style="font-family: 'Manrope';">yte</span>W<span style="font-family: 'Manrope';">orks</span>
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #2E2E2E">
+        <a class="navbar-brand mt-2" href="/byteWorks/" style="font-family: 'Anurati', sans-serif;'">
+            B<span style="font-family: Gilroy-bold;">yte</span>W<span style="font-family: Gilroy-bold;">orks</span>
         </a>
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarText">
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav mt-2">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/byteWorks/">
-                        Home
+                    <a class="nav-link" href="/byteWorks/" style="font-family: 'Gilroy-bold', sans-serif;">
+                        HOME
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/byteWorks/marketplace">
-                        marketplace
+                    <a class="nav-link" style="font-family: 'Gilroy-bold', sans-serif;" href="/byteWorks/marketplace">
+                        MARKETPLACE
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/byteWorks/consultancy">
-                        Categorias
+                    <a class="nav-link" style="font-family: 'Gilroy-bold', sans-serif;" href="/byteWorks/consultancy">
+                        CATEGORIAS
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/byteWorks/support">
-                        Suporte
+                    <a class="nav-link" style="font-family: 'Gilroy-bold', sans-serif;" href="/byteWorks/support">
+                        SUPORTE
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/byteWorks/freelancer">
-                        freelancer
+                    <a class="nav-link" style="font-family: 'Gilroy-bold', sans-serif;" href="/byteWorks/freelancer">
+                        FREELANCER
                     </a>
                 </li>
             </ul>
         </div>
 
         <div>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mt-2">
                 <li class="nav-item">
                     <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
                         data-target="#content" aria-controls="content" aria-expanded="false"
                         aria-label="Toggle navigation"><span class="dark-blue-text">
-                            <i class="fas fa-bars fa-1x"></i></span>
+                            <i class="fas fa-bars fa-1x" style="color: white"></i></span>
                     </button>
                 </li>
 
@@ -185,13 +197,17 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
 
-                        <div class='dropdown-menu justify-content-center' aria-labelledby='navbarsearch '
-                            style='z-index: 999'>
+                        <div class='dropdown-menu justify-content-center' aria-labelledby='navbarsearch'
+                            style='z-index: 999; position: absolute; right: 0; top: 100%; background-color: #333333'>
                             <div class='container'>
                                 <form action='/byteWorks/search' method='GET'>
-                                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                    <div class="input-group">
+                                        <input class="form-control" name="search" type="search" placeholder="Search"
+                                            aria-label="Search">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -200,172 +216,159 @@
                         <button class="" id="btnCarShopping" type="button" data-toggle="modal" data-target="#myModal"
                             aria-controls="myModal" aria-expanded="false" aria-label="Toggle navigation"><span
                                 class="dark-blue-text">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping" style="color: white"></i>
                         </button>
                     </li>
                 </div>
             </ul>
         </div>
     </nav>
-    <div class="collapse navbar-collapse" id="content">
-        <ul class="navbar-nav">
-            <li class="nav-item active ">
-                <a class="nav-link" href="/byteWorks/">
-                    Home
-                </a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="/byteWorks/marketplace">
-                        marketplace
+    <div class="collapse navbar-collapse sticky-top" id="content" style="background-color: #222222;">
+    <ul class="navbar-nav text-center">
+        <li class="nav-item active">
+            <a class="nav-link" href="/byteWorks/" style="font-family: 'Gilroy-bold'; text-transform: uppercase;">
+                HOME
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/byteWorks/marketplace" style="font-family: 'Gilroy-bold'; text-transform: uppercase;">
+                MARKETPLACE
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/byteWorks/consultancy" style="font-family: 'Gilroy-bold'; text-transform: uppercase;">
+                Categorias
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/byteWorks/support" style="font-family: 'Gilroy-bold'; text-transform: uppercase;">
+                SUPORTE
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/byteWorks/freelancer" style="font-family: 'Gilroy-bold'; text-transform: uppercase;">
+                FREELANCER
+            </a>
+        </li>
+        <li class="nav-item">
+            <button style="background-color: transparent; border: none;" type="button" data-toggle="modal" data-target="#myModal">
+                <i class="fa-solid fa-cart-shopping" style="color: white"></i>
+            </button>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="font-size: 12px; font-weight: bold; text-transform: uppercase;" href="/byteWorks/signup">
+                Cadastre-se
+            </a>
+        </li>
+        <li class="nav-item">
+            <?php if (isset($_SESSION["id"]) and !empty($_SESSION["id"])) {
+                echo "
+                    <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold; text-transform: uppercase;' href='#' id='navbarContentUser' data-toggle='dropdown'
+                        aria-haspopup='true' aria-expanded='false'>
+                        " .
+                    $_SESSION["login"] .
+                    "
                     </a>
-                </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/byteWorks/consultancy">
-                    Categorias
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/byteWorks/support">
-                    Suporte
-                </a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="/byteWorks/freelancer">
-                        freelancer
-                    </a>
-                </li>
-            <li class="nav-item">
-                <button style="background-color: transparent; border: none; " type="button" data-toggle="modal"
-                    data-target="#myModal">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="font-size: 12px; font-weight: bold;" href="/byteWorks/signup">Cadastre-se</a>
-            </li>
-            <li class="nav-item">
-                <?php
 
-                if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
-                    echo
-                        "
-                        <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold;' href='#' id='navbarContentUser' data-toggle='dropdown'
-                            aria-haspopup='true' aria-expanded='false'>
-                            " . $_SESSION["login"] . "
-                        </a>
-
-                        <div class='dropdown-menu justify-content-center' aria-labelledby='navbarContentUser'
-                            style='z-index: 999'>
-                            <div class='container'>
-                                <form action='/byteWorks/logout' method='post'>
-                                        <button class='btn btn-danger'>sair</button>
-                                </form>
-                            </div>
-                        </div>
-                        ";
-                }
-                else {
-                    echo
-                        "
-                        <a class='nav-link dropdown-toggle' style='font-size: 12px; font-weight: bold;' data-toggle='dropdown' id='navbarDropdownMenuLink1'
-                            aria-haspopup='true' aria-expanded='false'>
-                            Entrar
-                        </a>
-
-                        <div class='dropdown-menu justify-content-center sticky-top'
-                        aria-labelledby='navbarDropdownMenuLink1' style='z-index: 99'>
-                        <form action='/byteWorks/signin/select' method='get'>
-                            <div class='container'>
-                                <h1 class='h1'>Entre na byteWorks!</h1>
-                                <div class='row'>
-                                    <div class='col-lg'>
-                                        <label for=''>Login</label>
-                                        <input type='text' class='form-control' name='selectEmail'>
-                                    </div>
-                                </div>
-
-                                <div class='row'>
-                                    <div class='col-lg'>
-                                        <label for=''>Senha</label>
-                                        <input type='password' class='form-control' name='selectPassword'>
-                                        <small><a href=''>Esqueci a senha</a></small>
-                                    </div>
-                                </div>
+                    <div class='dropdown-menu justify-content-center' aria-labelledby='navbarContentUser' style='z-index: 999'>
+                        <div class='container'>
+                            <form action='/byteWorks/logout' method='post'>
+                                <button class='btn btn-danger' style='text-transform: uppercase;'>Sair</button>
                             </form>
-                            <br>
-                        <div class='row'>
-                            <div class='col-lg'>
-                                <button class='btn btn-secondary'>Entrar</button>
-                            </div>
                         </div>
                     </div>
-                        ";
-                }
-                ?>
-            </li>
-        </ul>
+                    ";
+            } else {
+                echo '
+                    <a class="nav-link dropdown-toggle" style="font-size: 12px; font-weight: bold; text-transform: uppercase;" data-toggle="dropdown" id="navbarDropdownMenuLink1" aria-haspopup="true" aria-expanded="false">
+                        Entrar
+                    </a>
 
-
-    </div>
-
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Itens no carrinho</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <?php
-                        if (isset($_SESSION['carShopping']) and $_SESSION['carShopping'] != null) {
-                            foreach ($_SESSION['carShopping'] as $data => $value) {
-                                echo
-                                    "
-                                    <div class='alert alert-secondary' role='alert'>
-                                        <div class='row'>
-                                            <div class='col'><img class='img-thumbnail' src='" . $value['imagePath'] . "' alt='' style='width: 100%'></div>
-                                            <div class='col'>" . $value['title'] . "</div>
-                                            <div class='col'>R$ " . number_format($value['amount'], 2, ',', '.') . "</div>
-                                            <div class='col'>
-                                                <form action='/byteWorks/product/unset' method='POST'>
-                                                    <input type='hidden' name='id' value='" . $value['idProduct'] . "'>
-                                                    <button class='close'>
-                                                        <span aria-hidden='true'>&times;</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    ";
-                            }
-                        }
-                        else {
-                            echo "<h4>Não existe nenhum produto por aqui...</h4>";
-                        }
-                        ?>
+                    <div class="dropdown-menu justify-content-center sticky-top"
+    aria-labelledby="navbarDropdownMenuLink" style="z-index: 99; background-color: #333333; padding: 20px;">
+    <form action="/byteWorks/signin/select" method="get">
+        <div class="container">
+            <h1 class="h1" style="font-family: "Gilroy-bold"; color: white;">Entre na ByteWorks!</h1>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label for="selectEmail" style="color: white;">Login</label>
+                        <input type="text" class="form-control" id="selectEmail" name="selectEmail">
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <h5>Total: <?php echo isset($_SESSION["carShoppingValue"]) ? number_format($_SESSION["carShoppingValue"], 2, ',', '.') : "nenhum produto no carrinho" ?></h5>
-                    <?php
-                    if (isset($_SESSION["carShopping"]) and $_SESSION["carShopping"] != null) {
-
-                        echo '
-                        <form method="post" action="/byteWorks/checkout">
-                            <button type="submit" class="btn btn-secondary">Continuar comprando</button>
-                        </form>';
-                    }
-                    else {
-                        echo '<button type="button" disabled class="btn btn-secondary" data-dismiss="modal">Continuar comprando</button>';
-                    }
-
-                    ?>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                        <label for="selectPassword" style="color: white;">Senha</label>
+                        <input type="password" class="form-control" id="selectPassword" name="selectPassword">
+                        <small><a href="#" style="color: white;">Esqueci a senha</a></small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <button class="btn btn-secondary btn-block">Entrar</button>
                 </div>
             </div>
         </div>
+    </form>
+</div>
+                    ';
+            } ?>
+        </li>
+    </ul>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #333333; color: white;">
+                <h4 class="modal-title">Itens no carrinho</h4>
+                <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <?php if (isset($_SESSION["carShopping"]) && $_SESSION["carShopping"] != null) { 
+                        foreach ($_SESSION["carShopping"] as $data => $value) {
+                            echo "
+                                <div class='alert alert-secondary' role='alert'>
+                                    <div class='row align-items-center'>
+                                        <div class='col-3'><img class='img-thumbnail' src='" . $value["imagePath"] . "' alt='' style='width: 100%;'></div>
+                                        <div class='col-4'>" . $value["title"] . "</div>
+                                        <div class='col-2'>R$ " . number_format($value["amount"], 2, ",", ".") . "</div>
+                                        <div class='col-3'>
+                                            <form action='/byteWorks/product/unset' method='POST'>
+                                                <input type='hidden' name='id' value='" . $value["idProduct"] . "'>
+                                                <button class='close' style='color: red; font-size: 24px;'>&times;</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            ";
+                        }
+                    } else {
+                        echo "<h4>Não existe nenhum produto por aqui...</h4>";
+                    } ?>
+                </div>
+            </div>
+            <div class="modal-footer" style="background-color: #333333; display: flex; justify-content: space-between;">
+                <h5 style="color: white;">Total: <?php echo isset($_SESSION["carShoppingValue"]) ? number_format($_SESSION["carShoppingValue"], 2, ",", ".") : ""; ?></h5>
+                <?php if (isset($_SESSION["carShopping"]) && $_SESSION["carShopping"] != null) {
+                    echo '
+                    <form method="post" action="/byteWorks/checkout">
+                        <button type="submit" class="btn btn-secondary">Continuar comprando</button>
+                    </form>';
+                } else {
+                    echo '<button type="button" disabled class="btn btn-secondary" data-dismiss="modal">Continuar comprando</button>';
+                } ?>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
     </div>
+</div>
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <a href="https://api.whatsapp.com/send/?phone=5531986052685&text&type=phone_number&app_absent=0" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
