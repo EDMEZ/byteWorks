@@ -11,6 +11,7 @@ require 'shared/load.php';
 
 <div class="container mt-5">
     <h1 class="text-center">Qual é o seu estilo de PC?</h1>
+    <p class="text-center">Escolher o PC certo é importante para atender às suas necessidades específicas. Descubra qual estilo de PC melhor se adapta a você.</p>
 
     <div class="container mt-5">
         <?php 
@@ -18,7 +19,7 @@ require 'shared/load.php';
         {
             echo 
             "
-            <a href='/byteWorks/consultancy/".$category['description']."?id=".$category['idCategory']."' class=' mt-2 col-sm-4 btn btn-light justify-content-center'>
+            <a href='/byteWorks/consultancy/".$category['description']."?id=".$category['idCategory']."' class=' mt-2 col-sm-4 btn btn-light justify-content-center' style='background-color: #fff;'>
                 <h5>".$category['description']."</h5>
                 <label>Será ".$category['description']." o estilo ideal para você?</label>
             </a>
@@ -27,6 +28,7 @@ require 'shared/load.php';
         ?>
     </div>
 </div>
+
 
 <footer class="text-white mt-5" style="background-color: #222222">
     <div class="container">
