@@ -15,39 +15,39 @@ require 'shared/load.php';
     <h5>Vale ressaltar que esse código irá funcionar por apenas 3 horas</h5>
 </div>
 
-<footer class="bg-light text-center mt-5">
+<footer class="text-white mt-5" style="background-color: #222222">
     <div class="container">
         <br>
         <div class="row">
             <div class="col-md-4">
-                <h5>Links Úteis</h5>
+                <h5 style="font-family: 'Gilroy-Bold';">Links Úteis</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/byteWorks">Home</a></li>
-                    <li><a href="/byteWorks/consultancy">Categorias</a></li>
-                    <li><a href="/byteWorks/support">Suporte</a></li>
+                    <li><a style="color: white;" href="/byteWorks">Home</a></li>
+                    <li><a style="color: white;" href="/byteWorks/consultancy">Categorias</a></li>
+                    <li><a style="color: white;" href="/byteWorks/support">Suporte</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5>Contato</h5>
+                <h5 style="font-family: 'Gilroy-Bold';">Contato</h5>
                 <address>
                     <strong>ByteWorks</strong><br>
                     Santa Cruz, 546<br>
                     Belo Horizonte - MG, 30431-228<br>
                     <i class="bi bi-telephone"></i> Telefone: (31) 3213-8666<br>
-                    <i class="bi bi-envelope"></i> Email: <a  href="mailto:info@empresa.com">suporte@byteWorks.com.br</a>
+                    <i class="bi bi-envelope"></i> Email: <a style="color: white;" href="mailto:suporte@byteWorks.com.br">suporte@byteWorks.com.br</a>
                 </address>
             </div>
             <div class="col-md-4">
-                <h5>Redes Sociais</h5>
+                <h5 style="font-family: 'Gilroy-Bold';">Redes Sociais</h5>
                 <ul class="list-unstyled">
-                    <li><a  href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
-                    <li><a  href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
-                    <li><a  href="#"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                    <li><a style="color: white;" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a style="color: white;" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a style="color: white;" href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 </ul>
             </div>
         </div>
         <div class="text-center mt-4">
-            <p>&copy; 2023 ByteWorks. Todos os direitos reservados.</p>
+            <p style="font-family: 'Gilroy-Bold';">&copy; 2023 ByteWorks. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>
