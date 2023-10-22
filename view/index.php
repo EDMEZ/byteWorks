@@ -27,7 +27,7 @@ require 'shared/load.php';
         </div>
     </div>
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid">
     <div class="row justify-content-center">
         <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
             <p><i class="fa-brands fa-pix mt-2"></i> <span>PAGAMENTO EM PIX</span></p>
