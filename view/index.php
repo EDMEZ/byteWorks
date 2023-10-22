@@ -27,21 +27,25 @@ require 'shared/load.php';
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
     <div class="row justify-content-center">
         <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
-            <p><i class="fa-brands fa-pix mt-2" ></i> <span>PAGAMENTO EM PIX</span></p>
+            <p><i class="fa-brands fa-pix mt-2"></i> <span>PAGAMENTO EM PIX</span></p>
+            <p class="mt-2">Pague com PIX de forma rápida e conveniente.</p>
         </button>
 
         <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
-            <p><i class="fa-solid fa-truck-fast mt-2" ></i> <span>ENTREGA RÁPIDA</span></p>
+            <p><i class="fa-solid fa-truck-fast mt-2"></i> <span>ENTREGA RÁPIDA</span></p>
+            <p class="mt-2">Receba seus produtos de forma rápida e segura.</p>
         </button>
 
         <button style="font-family: 'Gilroy-bold', sans-serif;" class="col-sm-4 btn bg-white justify-content-center">
-            <p><i class="fa-solid fa-lock mt-2" ></i> <span>COMPRA SEGURA E PROTEGIDA</span></p>
+            <p><i class="fa-solid fa-lock mt-2"></i> <span>COMPRA SEGURA E PROTEGIDA</span></p>
+            <p class="mt-2">Garantimos a segurança de suas compras.</p>
         </button>
     </div>
 </div>
+
 
 
 
