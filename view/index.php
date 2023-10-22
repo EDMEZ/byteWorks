@@ -46,23 +46,23 @@ require 'shared/load.php';
 
 
 <br>
-<div class="container bg-white">
-    <div class="row justify-content-center">
-        <div class="col">
-            <img src="https://images.vexels.com/media/users/3/261453/isolated/lists/7fac200b731438c7a078ddedd69c7181-halloween-jack-o-39-lantern-e-desenho-de-gato-preto.png" width="200">
+<div class="container bg-white p-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 text-center">
+            <img src="https://i.pinimg.com/originals/1b/24/66/1b2466ad57c9ce45ab273527c5165624.png" width="200">
         </div>
 
-        <div class="col">
-            <br>
-            <h5>Promoção de halloween da ByteWorks!!! </h5>
-            <p>Produtos que contêm as cores preto e laranja em conjunto irão ganhar desconto de 15% em comemoração ao halloween!!!!</p>
+        <div class="col-12 col-md-6">
+            <h5 class="text-center">Produtos focados para você é na ByteWorks!!!</h5>
+            <p class="text-center">Aqui você encontra laptops para qualquer tipo de necessidade e gostos!</p>
             
-            <form action="/byteWorks/consultancy/halloween/id=5" method="post">
-                <button class="btn btn-primary">Ver categoria de halloween</button>
+            <form action="/byteWorks/consultancy/halloween/id=5" method="post" class="text-center">
+                <button class="btn btn-secondary"><i class="fa-solid fa-eye"></i> Ver categorias</button>
             </form>
         </div>
     </div>
 </div>
+
 
 
 <div class="container">
